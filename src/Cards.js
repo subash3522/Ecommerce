@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import "./Cards.css";
 
 function Cards(props) {

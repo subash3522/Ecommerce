@@ -4,127 +4,15 @@ import "./Cards.css";
 import imga from "./logo.svg";
 import Carts from "./Carts.js";
 import Card1 from "./Card1.js";
+import product from './product.js'
 
 function Shopping() {
-  let product = [
-    {
-      id: 1,
-      name: "acer",
-      price: 20000,
-      img: "https://images.unsplash.com/photo-1525971977907-20d22da82d6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGxhcHRvcHMlMjBhY2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 2,
-      name: "Lenovo",
-      price: 60000,
-      img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 3,
-      name: "HP",
-      price: 134500,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 4,
-      name: "Mac Book",
-      price: 200003,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 5,
-      name: "Asus",
-      price: 50000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 6,
-      name: "Dell",
-      price: 23340,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 7,
-      name: "Microsoft",
-      price: 23532,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 8,
-      name: "Huawei",
-      price: 90000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 9,
-      name: "Samsung",
-      price: 110000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 10,
-      name: "Toshiba",
-      price: 30890,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 11,
-      name: "LG",
-      price: 92893,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 12,
-      name: "Lava",
-      price: 190999,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 13,
-      name: "Nokia",
-      price: 40000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-  ];
-
-  let product1 = [
-    {
-      id: 14,
-      name: "Ns200",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 15,
-      name: "Duke200",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 16,
-      name: "MT-15",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 17,
-      name: "Gixer150",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 18,
-      name: "X-Pulse",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-  ];
   const [list, setlist] = useState("");
   const [prc, setprc] = useState("");
   const [cat, setcat] = useState("");
 
   const [productList, setproductList] = useState([...product]);
-  const [productcat, setproductcat] = useState([...product1]);
+  const [productcat, setproductcat] = useState([...product]);
   const [subtotal, setsubtotal] = useState(0);
 
   const ttl = () => {
@@ -193,22 +81,36 @@ function Shopping() {
     ttl();
   };
 
- let [filter , setFilter]= useState([...productList]);
- let priceFilter = ()=>{
-  
- } 
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(100000);
 
+  const priceFilter = () => {
+    const filteredProducts = productList.filter(
+      (product) => product.price >= minPrice && product.price <= maxPrice
+    );
+    return filteredProducts;
+  };
+
+  useEffect(() => {
+    setproductList(priceFilter());
+  }, [minPrice, maxPrice]);
 
   return (
     <>
       <div className="fullpage">
-          
         <div className="overallmain">
-        <input type="range" min={0} max={100} value={productList.price} />
-        <div className="filter">Filter: <button >20000</button><button>30000</button><button >50000</button>
-          
+          <div className="filter">
+            Filter by Price Range:{" "}
+            <input
+              type="range"
+              min={0}
+              max={100000}
+              value={minPrice}
+              onChange={(e) => setMinPrice(e.target.value)}
+            />
+            <span>${minPrice}</span> - <span>${maxPrice}</span>
           </div>
-          <div className="category">Category:Laptops</div>
+          <div className="category">Category: Laptops</div>
           <div className="allcards">
             {productList.map((value, index) => (
               <Cards
@@ -218,11 +120,10 @@ function Shopping() {
                 key={value.id}
                 img={value.img}
                 handelAddToCart={handelAddToCart}
-                
               />
             ))}
           </div>
-          <div className="category">Category:Bikes</div>
+          <div className="category">Category: Bikes</div>
           <div className="allcards">
             {productcat.map((value) => (
               <Card1
@@ -279,7 +180,7 @@ function Shopping() {
             setprc("");
           }}
         >
-          Subbmit
+          Submit
         </button>
       </div>
     </>

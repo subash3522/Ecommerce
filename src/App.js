@@ -9,6 +9,7 @@ import Card1 from "./Card1";
 
 import "./App.css";
 import "aos/dist/aos.css";
+import Signup from "./Signup";
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Cards" element={<Cards />} />
         <Route path="/Card1" element={<Card1 />} />
+        <Route path="/Signup" element={<Signup/>} />
       </Routes>
     </Router>
   );
 }
+
 
 export default App;

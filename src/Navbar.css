@@ -1,130 +1,70 @@
+/* Navbar.css */
 
-* {margin: 0;
-    padding: 0;}
-    
-    .navbar{
-      display: flex;
-      justify-content: space-between;
-      height: 70px;
-      align-items: center;
-      background-color:burlywood;
-      
-      border-radius: 10px;
-      
-    }
-    
-    .logo{
-      margin-left: 20px;
-      color: white;
-    }
-    
-    .list ul{
-      margin-right: 20px;
-    }
-    
-    .list ul li{
-      list-style: none;
-      display: flex;
-    }
-    
-    .list ul li div a{
-      text-decoration: none;
-      margin: 0 10px;
-      color: black;
-      position: relative;
-    }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
 
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-    
-    
-    /* .list ul li div a::before {
-    content: '';
-    background-color: white;
-    position: absolute;
-    height: 2px;
-    width: 0%;
-    top: -3px;
-    left: 0;
-    z-index: 1;
-    } */
-    .list ul li div a::after{
-      content: '';
-      background-color: white;
-      position: absolute;
-      height: 2px;
-      width: 0%;
-      bottom: -3px;
-      left: 0;
-      z-index: 1;
-    }
-    /* .list ul li div a:hover::before{
-      width: 100%;
-      transition: 600ms;
-    } */
-    .list ul li div a:hover::after{
-      width: 100%;
-      transition: 600ms;
-    }
-    
-    
-    .navbar::after{
-     background-color: red;
-    }
-    
-    
-    .danger{
-      position: relative;
-      padding: 10px;
-      margin-top: 20px;
-    }
-    
-    .danger::after{
-      content: '';
-      background-color: blue;
-      position: absolute;
-      left: 0;
-      top: -10px;
-      height: 10px;
-      width: 0%;
-      z-index: 1;
-      margin-bottom: 9px;
-    }
-    .danger:hover::after{
-      content: '';
-      background-color: blue;
-      position: absolute;
-      left: 0;
-      top: -10px;
-      height: 10px;
-      width: 100%;
-      z-index: -1;
-      transition: 1s;
-    }
+.list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
-    .dropdown ul{
+.list ul li {
+  margin-right: 20px;
+  position: relative;
+}
 
-      display: none;
-      position: relative;
-    }
+.list ul li a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
 
-    .dropdown ul li {
-      padding-top: 5px;
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 0;
-      left: 0;
-      
-    }
-    .dropdown ul li a{
-      padding-top: 5px;
-    }
+.list ul li a:hover {
+  color: #ff5500;
+}
 
-  .dropdown:hover  ul{
-    display: block;
+.dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f8f8f8;
+  display: none;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.dropdown li {
+  margin-bottom: 5px;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .list ul {
+    flex-direction: column;
   }
- 
 
-
-    
-    
+  .list ul li {
+    margin-bottom: 10px;
+  }
+}
