@@ -1,11 +1,6 @@
 import React from 'react'
-import Shopping from './Shopping.js'
-import Contact from './Contact'
+
 import './Navbar.css'
-import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
-import Homepage from './Homepage.js';
-import Cards from './Cards.js';
-import Card1 from './Card1.js';
 function Navbar() {
   return (
    <>
@@ -30,16 +25,7 @@ function Navbar() {
         </ul>
       </div>
      </nav>
-     <Router>
-        <Routes>
-            <Route path='/Shopping' element={<Shopping/>}></Route>
-            <Route path='/Contact' element={<Contact/>}></Route>
-            <Route path='/' element={<Homepage/>}></Route>
-            <Route path='/Cards' element={<Cards/>}></Route>
-            <Route path='/Card1' element={<Card1/>}></Route>
 
-        </Routes>
-     </Router>
      
    </>
   )
