@@ -1,0 +1,130 @@
+
+* {margin: 0;
+    padding: 0;}
+    
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      height: 70px;
+      align-items: center;
+      background-color:burlywood;
+      
+      border-radius: 10px;
+      
+    }
+    
+    .logo{
+      margin-left: 20px;
+      color: white;
+    }
+    
+    .list ul{
+      margin-right: 20px;
+    }
+    
+    .list ul li{
+      list-style: none;
+      display: flex;
+    }
+    
+    .list ul li div a{
+      text-decoration: none;
+      margin: 0 10px;
+      color: black;
+      position: relative;
+    }
+
+
+    
+    
+    /* .list ul li div a::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    top: -3px;
+    left: 0;
+    z-index: 1;
+    } */
+    .list ul li div a::after{
+      content: '';
+      background-color: white;
+      position: absolute;
+      height: 2px;
+      width: 0%;
+      bottom: -3px;
+      left: 0;
+      z-index: 1;
+    }
+    /* .list ul li div a:hover::before{
+      width: 100%;
+      transition: 600ms;
+    } */
+    .list ul li div a:hover::after{
+      width: 100%;
+      transition: 600ms;
+    }
+    
+    
+    .navbar::after{
+     background-color: red;
+    }
+    
+    
+    .danger{
+      position: relative;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    
+    .danger::after{
+      content: '';
+      background-color: blue;
+      position: absolute;
+      left: 0;
+      top: -10px;
+      height: 10px;
+      width: 0%;
+      z-index: 1;
+      margin-bottom: 9px;
+    }
+    .danger:hover::after{
+      content: '';
+      background-color: blue;
+      position: absolute;
+      left: 0;
+      top: -10px;
+      height: 10px;
+      width: 100%;
+      z-index: -1;
+      transition: 1s;
+    }
+
+    .dropdown ul{
+
+      display: none;
+      position: relative;
+    }
+
+    .dropdown ul li {
+      padding-top: 5px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+    }
+    .dropdown ul li a{
+      padding-top: 5px;
+    }
+
+  .dropdown:hover  ul{
+    display: block;
+  }
+ 
+
+
+    
+    
