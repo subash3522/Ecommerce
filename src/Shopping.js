@@ -3,129 +3,27 @@ import Cards from "./Cards.js";
 import "./Cards.css";
 import imga from "./logo.svg";
 import Carts from "./Carts.js";
-import Card1 from "./Card1.js";
+
+import product from "./Product.js";
+import Navbar from "./Navbar.js";
 
 function Shopping() {
-  let product = [
-    {
-      id: 1,
-      name: "acer",
-      price: 20000,
-      img: "https://images.unsplash.com/photo-1525971977907-20d22da82d6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGxhcHRvcHMlMjBhY2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 2,
-      name: "Lenovo",
-      price: 60000,
-      img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-    },
-    {
-      id: 3,
-      name: "HP",
-      price: 134500,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 4,
-      name: "Mac Book",
-      price: 200003,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 5,
-      name: "Asus",
-      price: 50000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 6,
-      name: "Dell",
-      price: 23340,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 7,
-      name: "Microsoft",
-      price: 23532,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 8,
-      name: "Huawei",
-      price: 90000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 9,
-      name: "Samsung",
-      price: 110000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 10,
-      name: "Toshiba",
-      price: 30890,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 11,
-      name: "LG",
-      price: 92893,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 12,
-      name: "Lava",
-      price: 190999,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-    {
-      id: 13,
-      name: "Nokia",
-      price: 40000,
-      img: "https://img.freepik.com/free-psd/laptop-mock-up-isolated_1310-1458.jpg?size=626&ext=jpg",
-    },
-  ];
-
-  let product1 = [
-    {
-      id: 14,
-      name: "Ns200",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 15,
-      name: "Duke200",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 16,
-      name: "MT-15",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 17,
-      name: "Gixer150",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-    {
-      id: 18,
-      name: "X-Pulse",
-      price: 400000,
-      img: "https://images.unsplash.com/photo-1591378603223-e15b45a81640?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a3RtJTIwZHVrZSUyMDIwMHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
-    },
-  ];
-  const [list, setlist] = useState("");
-  const [prc, setprc] = useState("");
-  const [cat, setcat] = useState("");
-
   const [productList, setproductList] = useState([...product]);
-  const [productcat, setproductcat] = useState([...product1]);
   const [subtotal, setsubtotal] = useState(0);
+
+  const filterHandler = (a) => {
+    const updatedlist = product.filter((value) => {
+      return value.category === a;
+    });
+    setproductList(updatedlist);
+  };
+
+  const handleSliderFilter = (a) => {
+    const sliderValue = product.filter((value) => {
+      return value.price == a;
+    });
+    setproductList(sliderValue);
+  };
 
   const ttl = () => {
     let tltl = 0;
@@ -136,24 +34,14 @@ function Shopping() {
     setsubtotal(tltl);
   };
 
-  const subb = (a, b) => {
-    if (cat === "laptop") {
-      let updateProduct = [
-        ...productList,
-        { id: productList.length + 1, name: a, price: b, img: imga },
-      ];
-      setproductList(updateProduct);
-    }
-    if (cat === "bikes") {
-      let updatedcat = [
-        ...productcat,
-        { id: productcat.length + 1, name: a, price: b },
-      ];
-      setproductcat(updatedcat);
+  const getLocalItem = () => {
+    let list = localStorage.getItem("lis");
+    if (list) {
+      return JSON.parse(localStorage.getItem("lis"));
     }
   };
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(getLocalItem());
 
   const handelAddToCart = (product) => {
     const indexChecker = cart.findIndex((item) => item.id === product.id);
@@ -193,20 +81,30 @@ function Shopping() {
     ttl();
   };
 
- let [filter , setFilter]= useState([...productList]);
- let priceFilter = ()=>{
-  
- } 
+  useEffect(() => {
+    localStorage.setItem("lis", JSON.stringify(cart));
+  }, [cart]);
 
+  const [slider, setSlider] = useState("");
 
   return (
     <>
       <div className="fullpage">
-          
         <div className="overallmain">
-        <input type="range" min={0} max={100} value={productList.price} />
-        <div className="filter">Filter: <button >20000</button><button>30000</button><button >50000</button>
-          
+          <input
+            type="range"
+            min={0}
+            max={400000}
+            value={slider}
+            onChange={(e) => {
+              setSlider(e.target.value);
+              handleSliderFilter(slider);
+            }}
+          />
+          <span>{slider}</span>
+          <div className="filter">
+            Filter: <button onClick={() => filterHandler("Bike")}>Bike</button>
+            <button onClick={() => filterHandler("Laptop")}>Laptop</button>
           </div>
           <div className="category">Category:Laptops</div>
           <div className="allcards">
@@ -218,20 +116,6 @@ function Shopping() {
                 key={value.id}
                 img={value.img}
                 handelAddToCart={handelAddToCart}
-                
-              />
-            ))}
-          </div>
-          <div className="category">Category:Bikes</div>
-          <div className="allcards">
-            {productcat.map((value) => (
-              <Card1
-                product={value}
-                key={value.id}
-                Name={value.name}
-                Price={value.price}
-                handelAddToCart={handelAddToCart}
-                img={value.img}
               />
             ))}
           </div>
@@ -240,6 +124,13 @@ function Shopping() {
           <div className="forcenter">
             <h1>Your Cart</h1>
           </div>
+          <table>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Name</th>
+            <th>Action</th>
+            <th>Remove</th>
+          </table>
           {cart.map((value, index) => (
             <Carts
               cname={value.name}
@@ -255,32 +146,6 @@ function Shopping() {
           ))}
           Total Price: {subtotal}
         </div>
-      </div>
-
-      <div className="addproduct">
-        <input
-          onChange={(e) => setlist(e.target.value)}
-          value={list}
-          type="text"
-          placeholder="Product Name"
-        />
-        <input
-          onChange={(e) => setprc(e.target.value)}
-          value={prc}
-          type="text"
-          placeholder="Product Price"
-        />
-        <input onChange={(e) => setcat(e.target.value)} type="text" />
-        <button
-          className="subbmit"
-          onClick={() => {
-            subb(list, prc);
-            setlist("");
-            setprc("");
-          }}
-        >
-          Subbmit
-        </button>
       </div>
     </>
   );

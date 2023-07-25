@@ -9,7 +9,7 @@
       align-items: center;
       background-color:burlywood;
       
-      border-radius: 10px;
+      border-radius: 4px;
       
     }
     
@@ -123,6 +123,20 @@
   .dropdown:hover  ul{
     display: block;
   }
+
+  .searchContainer{
+    position: relative;
+    margin-right: 46px;
+  }
+  .suggestions{
+    position: absolute;
+  }
+ .search input{
+  height: 30px;
+  width: auto;
+  border-radius: 10px;
+  text-align: center;
+ }
  
 
 
