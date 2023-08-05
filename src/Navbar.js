@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import Shopping from "./Shopping";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link,
+} from "react-router-dom";
 
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,10 +35,11 @@ function Navbar(props) {
                       props.searchFilter(search);
                     }}
                   />
+                  <span className="logoSearch">Search</span>
                 </div>
                 <div className="suggestions">
-                  {props.showResult.map((value) => (
-                    <li>{value.name}</li>
+                  {props.showResult?.map((value) => (
+                    <li>{value}</li>
                   ))}
                 </div>
               </div>

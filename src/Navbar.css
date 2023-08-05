@@ -131,11 +131,23 @@
   .suggestions{
     position: absolute;
   }
+  .search{
+    position: relative;
+  }
  .search input{
-  height: 30px;
-  width: auto;
+  height: 40px;
+  width: 700px;
   border-radius: 10px;
   text-align: center;
+ }
+
+ .search .logoSearch{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: solid red;
+  background-color: red;
+  border-radius: 10px;
  }
  
 
