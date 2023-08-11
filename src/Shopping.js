@@ -10,6 +10,7 @@ import Navbar from "./Navbar.js";
 function Shopping() {
   const [productList, setproductList] = useState([...product]);
   const [subtotal, setsubtotal] = useState(0);
+  
 
   const filterHandler = (a) => {
     const updatedlist = product.filter((value) => {
@@ -32,7 +33,9 @@ function Shopping() {
       tltl = tltl + appl;
     });
     setsubtotal(tltl);
+    
   };
+  
 
   const getLocalItem = () => {
     let list = localStorage.getItem("lis");
@@ -41,7 +44,8 @@ function Shopping() {
     }
   };
 
-  const [cart, setCart] = useState(getLocalItem());
+  const [cart, setCart] = useState(getLocalItem() || []);
+
 
   const handelAddToCart = (product) => {
     const indexChecker = cart.findIndex((item) => item.id === product.id);
@@ -50,6 +54,7 @@ function Shopping() {
       const updateCart = [...cart];
       updateCart[indexChecker].quantity += 1;
       setCart(updateCart);
+      ttl()
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
@@ -57,7 +62,7 @@ function Shopping() {
   };
 
   const decrement = (a) => {
-    const indexChecker = cart.findIndex((item) => (item.id = a.id));
+    const indexChecker = cart.findIndex((item) => (item.id === a.id));
 
     const updateCart = [...cart];
     updateCart[indexChecker].quantity -= 1;
@@ -84,6 +89,7 @@ function Shopping() {
   useEffect(() => {
     localStorage.setItem("lis", JSON.stringify(cart));
   }, [cart]);
+  
 
   const [slider, setSlider] = useState("");
 
