@@ -63,11 +63,14 @@ function Shopping() {
 
   const decrement = (a) => {
     const indexChecker = cart.findIndex((item) => (item.id === a.id));
-
+    
     const updateCart = [...cart];
+    if(updateCart[indexChecker].quantity>1){
     updateCart[indexChecker].quantity -= 1;
     setCart(updateCart);
     ttl();
+    }
+    return;
   };
 
   const onRemove = (key) => {
@@ -137,7 +140,7 @@ function Shopping() {
             <th>Name</th>
             <th>Action</th>
             <th>Remove</th>
-          </table>
+          <tbody>
           {cart.map((value, index) => (
             <Carts
               cname={value.name}
@@ -151,6 +154,8 @@ function Shopping() {
               product={value}
             />
           ))}
+          </tbody>
+          </table>
           Total Price: {subtotal}
         </div>
       </div>

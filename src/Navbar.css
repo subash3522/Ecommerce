@@ -105,19 +105,24 @@
 
       display: none;
       position: relative;
+      z-index: 1;
     }
 
     .dropdown ul li {
       padding-top: 5px;
       display: flex;
       flex-direction: column;
+     justify-content: space-between;
       position: absolute;
       top: 0;
       left: 0;
+     
       
     }
     .dropdown ul li a{
       padding-top: 5px;
+     
+    
     }
 
   .dropdown:hover  ul{
@@ -150,7 +155,3 @@
   border-radius: 10px;
  }
  
-
-
-    
-    
