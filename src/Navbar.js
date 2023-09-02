@@ -44,10 +44,10 @@ function Navbar(props) {
                 </div>
               </div>
               <div>
-                <a href="/">FuckHome</a>
+                <a href="/">Home</a>
               </div>
               <div className="dropdown">
-                <a href="">FuckCategory</a>
+                <a href="">Category</a>
                 <ul>
                   <li>
                     <a href="./cards">Laptops</a>
