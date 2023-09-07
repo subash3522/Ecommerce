@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import Shopping from "./Shopping";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
+
 
 import "./Navbar.css";
+import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar(props) {
   const [search, setSearch] = useState([]);
@@ -35,7 +30,7 @@ function Navbar(props) {
                       props.searchFilter(search);
                     }}
                   />
-                  <span className="logoSearch">Search</span>
+                  <span className="logoSearch"><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
                 </div>
                 <div className="suggestions">
                   {props.showResult?.map((value) => (

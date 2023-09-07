@@ -1,43 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
-* {margin: 0;
-    padding: 0;}
-    
-    .navbar{
-      display: flex;
-      justify-content: space-between;
-      height: 70px;
-      align-items: center;
-      background-color:burlywood;
-      
-      border-radius: 4px;
-      
-    }
-    
-    .logo{
-      margin-left: 20px;
-      color: white;
-    }
-    
-    .list ul{
-      margin-right: 20px;
-    }
-    
-    .list ul li{
-      list-style: none;
-      display: flex;
-    }
-    
-    .list ul li div a{
-      text-decoration: none;
-      margin: 0 10px;
-      color: black;
-      position: relative;
-    }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  background-color: burlywood;
+  border-radius: 4px;
+}
 
+.logo {
+  margin-left: 20px;
+  color: white;
+}
+.list {
+  width: 85%;
+}
 
-    
-    
-    /* .list ul li div a::before {
+.list ul li {
+  list-style: none;
+  display: flex;
+}
+
+.list ul li div a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: black;
+  position: relative;
+}
+
+/* .list ul li div a::before {
     content: '';
     background-color: white;
     position: absolute;
@@ -47,111 +42,108 @@
     left: 0;
     z-index: 1;
     } */
-    .list ul li div a::after{
-      content: '';
-      background-color: white;
-      position: absolute;
-      height: 2px;
-      width: 0%;
-      bottom: -3px;
-      left: 0;
-      z-index: 1;
-    }
-    /* .list ul li div a:hover::before{
+.list ul li div a::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  bottom: -3px;
+  left: 0;
+  z-index: 1;
+}
+/* .list ul li div a:hover::before{
       width: 100%;
       transition: 600ms;
     } */
-    .list ul li div a:hover::after{
-      width: 100%;
-      transition: 600ms;
-    }
-    
-    
-    .navbar::after{
-     background-color: red;
-    }
-    
-    
-    .danger{
-      position: relative;
-      padding: 10px;
-      margin-top: 20px;
-    }
-    
-    .danger::after{
-      content: '';
-      background-color: blue;
-      position: absolute;
-      left: 0;
-      top: -10px;
-      height: 10px;
-      width: 0%;
-      z-index: 1;
-      margin-bottom: 9px;
-    }
-    .danger:hover::after{
-      content: '';
-      background-color: blue;
-      position: absolute;
-      left: 0;
-      top: -10px;
-      height: 10px;
-      width: 100%;
-      z-index: -1;
-      transition: 1s;
-    }
+.list ul li div a:hover::after {
+  width: 100%;
+  transition: 600ms;
+}
 
-    .dropdown ul{
+.navbar::after {
+  background-color: red;
+}
 
-      display: none;
-      position: relative;
-      z-index: 1;
-    }
+.danger {
+  position: relative;
+  padding: 10px;
+  margin-top: 20px;
+}
 
-    .dropdown ul li {
-      padding-top: 5px;
-      display: flex;
-      flex-direction: column;
-     justify-content: space-between;
-      position: absolute;
-      top: 0;
-      left: 0;
-     
-      
-    }
-    .dropdown ul li a{
-      padding-top: 5px;
-     
-    
-    }
+.danger::after {
+  content: "";
+  background-color: blue;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  height: 10px;
+  width: 0%;
+  z-index: 1;
+  margin-bottom: 9px;
+}
+.danger:hover::after {
+  content: "";
+  background-color: blue;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  height: 10px;
+  width: 100%;
+  z-index: -1;
+  transition: 1s;
+}
 
-  .dropdown:hover  ul{
-    display: block;
-  }
+.dropdown ul {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
 
-  .searchContainer{
-    position: relative;
-    margin-right: 46px;
-  }
-  .suggestions{
-    position: absolute;
-  }
-  .search{
-    position: relative;
-  }
- .search input{
+.dropdown ul li {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dropdown ul li a {
+  padding-top: 5px;
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.searchContainer {
+  position: relative;
+  margin-right: 46px;
+  width: 55%;
+}
+.suggestions {
+  position: absolute;
+}
+.search {
+  position: relative;
+}
+.search input {
   height: 40px;
-  width: 700px;
+  width: 100%;
   border-radius: 10px;
   text-align: center;
- }
+}
 
- .search .logoSearch{
+.search .logoSearch {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  border: solid red;
-  background-color: red;
-  border-radius: 10px;
- }
- 
+  top: 0.55rem;
+  right: 0.9rem;
+  
+}
+
+@media (max-width: 740px) {
+  .list{
+    display: none;
+  }
+}

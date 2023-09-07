@@ -54,7 +54,7 @@ function Homepage() {
         </div>
         <div className="imagecontent" data-aos="fade-right">
           <img
-            src="https://png.pngtree.com/element_pic/00/16/09/0957d18b258cbdc.jpg"
+            src="https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_1280.jpg"
             alt=""
           />
         </div>
@@ -62,11 +62,13 @@ function Homepage() {
 
       <div className="secondpart">
         <div className="writtencontent" data-aos="flip-right">
-          <h3>But... the proper question would be</h3>
-          <p>What you want?</p>
+        <img src="https://cdn.pixabay.com/photo/2016/11/22/21/57/apparel-1850804_1280.jpg" alt="Shoping photo" />
+          
         </div>
-        <div className="imagecontent" data-aos="flip-up">
-          <img src="ktm-200.webp" alt="Shoping photo" />
+        <div className="writtencontent" data-aos="flip-up">
+        <h3>But... the proper question would be</h3>
+          <p>What do you want?</p>
+          
         </div>
       </div>
       <footer>Frontend : Subash Bhandari</footer>

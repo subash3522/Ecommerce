@@ -6,6 +6,7 @@ import Shopping from "./Shopping.js";
 import Contact from "./Contact";
 import "./Navbar.css";
 import product from "./Product";
+import Myapi from "./Myapi.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,14 +34,16 @@ function App() {
   return (
     <>
       <Navbar searchFilter={searchFilter} showResult={showResult} />
+      {/* <Homepage />
+      <Shopping /> */}
+      
       <Router>
         <Routes>
-        <Route> <Route path="/Shopping" element={<Shopping />}></Route></Route>
+          <Route path="/Shopping" element={<Shopping />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/Cards" element={<Cards />}></Route>
-        
-          
+          <Route path="/Myapi" element={<Myapi/>}></Route>
         </Routes>
       </Router>
     </>
