@@ -39,9 +39,9 @@ function Homepage() {
             </button>
             {loginChecker ? <Loginpage cancleHandler={cancleHandler} /> : null}
 
-            <Link to="/Shopping">
+            {/* <Link to="/Shopping">
               <button className="reg">Let's Shop</button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

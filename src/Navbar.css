@@ -16,8 +16,17 @@
   margin-left: 20px;
   color: white;
 }
+.sidebar{
+  display: none;
+}
 .list {
   width: 85%;
+  display: block;
+}
+
+.hamburger{
+  margin-right: 1rem;
+  display: none;
 }
 
 .list ul li {
@@ -145,5 +154,26 @@
 @media (max-width: 740px) {
   .list{
     display: none;
+    width: 300px;
   }
+  .hamburger{
+    display: block;
+  }
+  .sidebar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 4rem;
+    left: 0;
+  }
+  .sidebar ul li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .sidebar .searchContainer {
+    width: 80%;
+  }
+ 
 }
+

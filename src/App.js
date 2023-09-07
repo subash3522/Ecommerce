@@ -34,8 +34,8 @@ function App() {
   return (
     <>
       <Navbar searchFilter={searchFilter} showResult={showResult} />
-      {/* <Homepage />
-      <Shopping /> */}
+      <Homepage />
+      {/* <Shopping /> */}
       
       <Router>
         <Routes>

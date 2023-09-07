@@ -6,6 +6,7 @@ import "./Navbar.css";
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar(props) {
   const [search, setSearch] = useState([]);
@@ -13,11 +14,18 @@ function Navbar(props) {
 
   const sggClicker = (a) => {};
 
+  const [sideBar,setSidebar] = useState(true)
+
+  const sideBarHandler = ()=>{
+    
+    setSidebar(!sideBar);
+  }
+
   return (
     <>
       <nav className="navbar">
         <div className="logo">LOGO</div>
-        <div className="list">
+        <div className= {sideBar?'sidebar list':'list'}>
           <ul>
             <li>
               <div className="searchContainer">
@@ -62,6 +70,7 @@ function Navbar(props) {
             </li>
           </ul>
         </div>
+        <div className="hamburger" onClick={()=>sideBarHandler()}><FontAwesomeIcon icon={faBars} /></div>
       </nav>
     </>
   );
