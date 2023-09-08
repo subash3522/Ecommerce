@@ -40,8 +40,8 @@ function App() {
   return (
     <>
       <Navbar searchFilter={searchFilter} showResult={showResult} sideBar={sideBar} sideBarHandler={sideBarHandler}/>
-      {/* <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/> */}
-      {/* <Shopping /> */}
+      <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
+      <Shopping />
       
       <Router>
         <Routes>
