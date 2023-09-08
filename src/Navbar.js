@@ -14,18 +14,13 @@ function Navbar(props) {
 
   const sggClicker = (a) => {};
 
-  const [sideBar,setSidebar] = useState(true)
-
-  const sideBarHandler = ()=>{
-    
-    setSidebar(!sideBar);
-  }
+ 
 
   return (
     <>
       <nav className="navbar">
         <div className="logo">LOGO</div>
-        <div className= {sideBar?'sidebar list':'list'}>
+        <div className= {props.sideBar?'sidebar list':'list'}>
           <ul>
             <li>
               <div className="searchContainer">
@@ -70,7 +65,7 @@ function Navbar(props) {
             </li>
           </ul>
         </div>
-        <div className="hamburger" onClick={()=>sideBarHandler()}><FontAwesomeIcon icon={faBars} /></div>
+        <div className="hamburger" onClick={()=>props.sideBarHandler()}><FontAwesomeIcon icon={faBars} /></div>
       </nav>
     </>
   );

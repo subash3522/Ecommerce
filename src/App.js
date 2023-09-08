@@ -30,11 +30,17 @@ function App() {
     });
     setShowResutl(filterResult);
   };
+  const [sideBar,setSidebar] = useState(true)
+
+  const sideBarHandler = ()=>{
+    
+    setSidebar(!sideBar);
+  }
 
   return (
     <>
-      <Navbar searchFilter={searchFilter} showResult={showResult} />
-      <Homepage />
+      <Navbar searchFilter={searchFilter} showResult={showResult} sideBar={sideBar} sideBarHandler={sideBarHandler}/>
+      <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
       {/* <Shopping /> */}
       
       <Router>

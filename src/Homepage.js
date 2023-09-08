@@ -11,7 +11,7 @@ import {
   Link,
 } from "react-router-dom";
 
-function Homepage() {
+function Homepage(props) {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -28,7 +28,7 @@ function Homepage() {
 
   return (
     <>
-      <div className="maincontainer">
+      <div className={`maincontainer ${props.sideBar?'bgblur':''}`}>
         <div className="center">
           <div className="forlogi">
             <h2 className="heading">Shop Like A King...</h2>

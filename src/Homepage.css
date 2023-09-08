@@ -126,4 +126,10 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+    .writtencontent{
+        width: 85%;
+    }
+    .imagecontent{
+        width: 85%;
+    }
 }
