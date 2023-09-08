@@ -30,7 +30,7 @@ function App() {
     });
     setShowResutl(filterResult);
   };
-  const [sideBar,setSidebar] = useState(true)
+  const [sideBar,setSidebar] = useState(false)
 
   const sideBarHandler = ()=>{
     
