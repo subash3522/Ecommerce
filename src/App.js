@@ -40,14 +40,14 @@ function App() {
   return (
     <>
       <Navbar searchFilter={searchFilter} showResult={showResult} sideBar={sideBar} sideBarHandler={sideBarHandler}/>
-      <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
+      {/* <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/> */}
       {/* <Shopping /> */}
       
       <Router>
         <Routes>
           <Route path="/Shopping" element={<Shopping />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
-          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/" element={<Homepage sideBar={sideBar} sideBarHandler={sideBarHandler} />}></Route>
           <Route path="/Cards" element={<Cards />}></Route>
           <Route path="/Myapi" element={<Myapi/>}></Route>
         </Routes>

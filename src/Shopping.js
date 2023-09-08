@@ -3,14 +3,13 @@ import Cards from "./Cards.js";
 import "./Cards.css";
 import imga from "./logo.svg";
 import Carts from "./Carts.js";
-
 import product from "./Product.js";
 import Navbar from "./Navbar.js";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 function Shopping() {
   const [productList, setproductList] = useState([...product]);
   const [subtotal, setsubtotal] = useState(0);
-  
 
   const filterHandler = (a) => {
     const updatedlist = product.filter((value) => {
@@ -33,9 +32,7 @@ function Shopping() {
       tltl = tltl + appl;
     });
     setsubtotal(tltl);
-    
   };
-  
 
   const getLocalItem = () => {
     let list = localStorage.getItem("lis");
@@ -46,7 +43,6 @@ function Shopping() {
 
   const [cart, setCart] = useState(getLocalItem() || []);
 
-
   const handelAddToCart = (product) => {
     const indexChecker = cart.findIndex((item) => item.id === product.id);
     console.log(cart);
@@ -54,7 +50,7 @@ function Shopping() {
       const updateCart = [...cart];
       updateCart[indexChecker].quantity += 1;
       setCart(updateCart);
-      ttl()
+      ttl();
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
@@ -62,13 +58,13 @@ function Shopping() {
   };
 
   const decrement = (a) => {
-    const indexChecker = cart.findIndex((item) => (item.id === a.id));
-    
+    const indexChecker = cart.findIndex((item) => item.id === a.id);
+
     const updateCart = [...cart];
-    if(updateCart[indexChecker].quantity>1){
-    updateCart[indexChecker].quantity -= 1;
-    setCart(updateCart);
-    ttl();
+    if (updateCart[indexChecker].quantity > 1) {
+      updateCart[indexChecker].quantity -= 1;
+      setCart(updateCart);
+      ttl();
     }
     return;
   };
@@ -92,14 +88,19 @@ function Shopping() {
   useEffect(() => {
     localStorage.setItem("lis", JSON.stringify(cart));
   }, [cart]);
-  
 
   const [slider, setSlider] = useState("");
 
+  const [cartChecker,setCartChecker] = useState(false);
+
+  const handleCartDetails = ()=>{
+    setCartChecker(!cartChecker);
+  }
+
   return (
     <>
-   
       <div className="fullpage">
+        <div className="cartIcon" onClick={()=>handleCartDetails()}>< FontAwesomeIcon icon={faCartShopping} /></div>
         <div className="overallmain">
           <input
             type="range"
@@ -130,7 +131,8 @@ function Shopping() {
             ))}
           </div>
         </div>
-        <div className="width-100">
+        <div className={`width-100 ${cartChecker?'cartVisible':''}`}>
+        {/* // <div className="width-100" `width-100 ${cartChecker?'cartVisible':''}`> */}
           <div className="forcenter">
             <h1>Your Cart</h1>
           </div>
@@ -140,21 +142,21 @@ function Shopping() {
             <th>Name</th>
             <th>Action</th>
             <th>Remove</th>
-          <tbody>
-          {cart.map((value, index) => (
-            <Carts
-              cname={value.name}
-              cprice={value.price}
-              cquantity={value.quantity}
-              key={value.id}
-              index={index}
-              onRemove={onRemove}
-              increment={increment}
-              decrement={decrement}
-              product={value}
-            />
-          ))}
-          </tbody>
+            <tbody>
+              {cart.map((value, index) => (
+                <Carts
+                  cname={value.name}
+                  cprice={value.price}
+                  cquantity={value.quantity}
+                  key={value.id}
+                  index={index}
+                  onRemove={onRemove}
+                  increment={increment}
+                  decrement={decrement}
+                  product={value}
+                />
+              ))}
+            </tbody>
           </table>
           Total Price: {subtotal}
         </div>
