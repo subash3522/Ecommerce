@@ -31,7 +31,7 @@ function Homepage(props) {
       <div className={`maincontainer ${props.sideBar?'bgblur':''}`}>
         <div className="center">
           <div className="forlogi">
-            <h2 className="heading">Shop Like A King...</h2>
+            <h2 className="heading">Your Ultimate Fashion Destination! <br/></h2>
           </div>
           <div className="forbutton">
             <button className="reg" onClick={() => loginHandler()}>
