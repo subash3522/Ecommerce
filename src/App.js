@@ -44,8 +44,8 @@ function App() {
         sideBar={sideBar}
         sideBarHandler={sideBarHandler}
       />
-      {/* <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
-      <Shopping /> */}
+      <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
+      <Shopping />
 
       <Router>
         <Routes>
