@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import "./Navbar.css";
 import product from "./Product";
 import Myapi from "./Myapi.js";
+import Mycontext from "./Mycontext.js"
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,6 +36,7 @@ function App() {
   const sideBarHandler = () => {
     setSidebar(!sideBar);
   };
+  const appleData = 'i am apple'
 
   return (
     <>
@@ -46,6 +48,10 @@ function App() {
       />
       <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
       <Shopping />
+
+      <Mycontext.Provider value = {appleData} >
+        <Myapi/>
+      </Mycontext.Provider>
 
       <Router>
         <Routes>

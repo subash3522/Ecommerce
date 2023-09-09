@@ -32,6 +32,8 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useContext } from 'react';
+import Mycontext from './Mycontext';
 
 function MyApi() {
   const [activity, setActivity] = useState('');
@@ -45,12 +47,14 @@ function MyApi() {
       console.error('Error fetching activity', error);
     }
   }
+  dataApple = useContext(Mycontext);
 
   return (
     <div>
       <h1>Random Activity Suggestion:</h1>
       <p>{activity}</p>
       <button onClick={fetchActivity}>Get Random Activity</button>
+
     </div>
   );
 }
