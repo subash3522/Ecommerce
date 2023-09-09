@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Shopping from "./Shopping";
-
+import Shopping from "./Shopping.js";
 
 import "./Navbar.css";
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -14,13 +13,11 @@ function Navbar(props) {
 
   const sggClicker = (a) => {};
 
- 
-
   return (
     <>
       <nav className="navbar">
         <div className="logo">LOGO</div>
-        <div className= {props.sideBar?'sidebar list':'list'}>
+        <div className={props.sideBar ? "sidebar list" : "list"}>
           <ul>
             <li>
               <div className="searchContainer">
@@ -33,7 +30,9 @@ function Navbar(props) {
                       props.searchFilter(search);
                     }}
                   />
-                  <span className="logoSearch"><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
+                  <span className="logoSearch">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  </span>
                 </div>
                 <div className="suggestions">
                   {props.showResult?.map((value) => (
@@ -42,7 +41,7 @@ function Navbar(props) {
                 </div>
               </div>
               <div>
-                <a href="/">Home</a>
+                <a href="/Ecommerce/">Home</a>
               </div>
               <div className="dropdown">
                 <a href="">Category</a>
@@ -57,15 +56,17 @@ function Navbar(props) {
                 <a href="">About</a>
               </div>
               <div>
-                <a href="/contact">Contact</a>
+                <a href="/Ecommerce/contact">Contact</a>
               </div>
               <div>
-                <a href="/shopping">Shopping</a>
+                <a href="/Ecommerce/shopping">Shopping</a>
               </div>
             </li>
           </ul>
         </div>
-        <div className="hamburger" onClick={()=>props.sideBarHandler()}><FontAwesomeIcon icon={faBars} /></div>
+        <div className="hamburger" onClick={() => props.sideBarHandler()}>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
       </nav>
     </>
   );

@@ -30,26 +30,35 @@ function App() {
     });
     setShowResutl(filterResult);
   };
-  const [sideBar,setSidebar] = useState(false)
+  const [sideBar, setSidebar] = useState(false);
 
-  const sideBarHandler = ()=>{
-    
+  const sideBarHandler = () => {
     setSidebar(!sideBar);
-  }
+  };
 
   return (
     <>
-      <Navbar searchFilter={searchFilter} showResult={showResult} sideBar={sideBar} sideBarHandler={sideBarHandler}/>
-      <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
-      <Shopping />
-      
+      <Navbar
+        searchFilter={searchFilter}
+        showResult={showResult}
+        sideBar={sideBar}
+        sideBarHandler={sideBarHandler}
+      />
+      {/* <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
+      <Shopping /> */}
+
       <Router>
         <Routes>
-          <Route path="/Shopping" element={<Shopping />}></Route>
-          <Route path="/Contact" element={<Contact />}></Route>
-          <Route path="/" element={<Homepage sideBar={sideBar} sideBarHandler={sideBarHandler} />}></Route>
-          <Route path="/Cards" element={<Cards />}></Route>
-          <Route path="/Myapi" element={<Myapi/>}></Route>
+          <Route path="/Ecommerce/Shopping" element={<Shopping />}></Route>
+          <Route path="/Ecommerce/Contact" element={<Contact />}></Route>
+          <Route
+            path="/Ecommerce/"
+            element={
+              <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler} />
+            }
+          ></Route>
+          <Route path="/Ecommerce/Cards" element={<Cards />}></Route>
+          <Route path="/Ecommerce/Myapi" element={<Myapi />}></Route>
         </Routes>
       </Router>
     </>

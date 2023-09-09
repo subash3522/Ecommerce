@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards.js";
 import "./Cards.css";
-import imga from "./logo.svg";
 import Carts from "./Carts.js";
 import product from "./Product.js";
-import Navbar from "./Navbar.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 function Shopping() {
@@ -19,15 +17,19 @@ function Shopping() {
   };
 
   const handleSliderFilter = (a) => {
+    const sldValue = a.target.value;
+    setSlider(sldValue);
     const sliderValue = product.filter((value) => {
-      return value.price == a;
+      return value.price <= sldValue;
     });
     setproductList(sliderValue);
   };
 
   const ttl = () => {
+    
     let tltl = 0;
     cart.map((value) => {
+      
       const appl = value.price * value.quantity;
       tltl = tltl + appl;
     });
@@ -91,33 +93,33 @@ function Shopping() {
 
   const [slider, setSlider] = useState("");
 
-  const [cartChecker,setCartChecker] = useState(false);
+  const [cartChecker, setCartChecker] = useState(false);
 
-  const handleCartDetails = ()=>{
+  const handleCartDetails = () => {
     setCartChecker(!cartChecker);
-  }
+  };
 
   return (
     <>
       <div className="fullpage">
-        <div className="cartIcon" onClick={()=>handleCartDetails()}>< FontAwesomeIcon icon={faCartShopping} /></div>
+        <div className="cartIcon" onClick={() => handleCartDetails()}>
+          <FontAwesomeIcon icon={faCartShopping} />
+        </div>
         <div className="overallmain">
           <input
             type="range"
             min={0}
             max={400000}
             value={slider}
-            onChange={(e) => {
-              setSlider(e.target.value);
-              handleSliderFilter(slider);
-            }}
+            onChange={handleSliderFilter}
           />
           <span>{slider}</span>
           <div className="filter">
             Filter: <button onClick={() => filterHandler("Bike")}>Bike</button>
             <button onClick={() => filterHandler("Laptop")}>Laptop</button>
+            <button onClick={() => setproductList(product)}>All</button>
           </div>
-          <div className="category">Category:Laptops</div>
+         
           <div className="allcards">
             {productList.map((value, index) => (
               <Cards
@@ -131,8 +133,8 @@ function Shopping() {
             ))}
           </div>
         </div>
-        <div className={`width-100 ${cartChecker?'cartVisible':''}`}>
-        {/* // <div className="width-100" `width-100 ${cartChecker?'cartVisible':''}`> */}
+        <div className={`width-100 ${cartChecker ? "cartVisible" : ""}`}>
+          {/* // <div className="width-100" `width-100 ${cartChecker?'cartVisible':''}`> */}
           <div className="forcenter">
             <h1>Your Cart</h1>
           </div>
