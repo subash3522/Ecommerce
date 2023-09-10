@@ -8,6 +8,7 @@ import "./Navbar.css";
 import product from "./Product";
 import Myapi from "./Myapi.js";
 import Mycontext from "./Mycontext.js"
+import { HashRouter } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Switch,
@@ -46,27 +47,28 @@ function App() {
         sideBar={sideBar}
         sideBarHandler={sideBarHandler}
       />
-      <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
-      <Shopping />
+      {/* <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
+      <Shopping /> */}
 
-      <Mycontext.Provider value = {appleData} >
-        <Myapi/>
-      </Mycontext.Provider>
+      
 
-      <Router>
+      <HashRouter>
         <Routes>
-          <Route path="/Ecommerce/Shopping" element={<Shopping />}></Route>
-          <Route path="/Ecommerce/Contact" element={<Contact />}></Route>
+          <Route path="/Shopping" element={<Shopping />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
           <Route
-            path="/Ecommerce/"
+            path="/"
             element={
               <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler} />
             }
           ></Route>
-          <Route path="/Ecommerce/Cards" element={<Cards />}></Route>
-          <Route path="/Ecommerce/Myapi" element={<Myapi />}></Route>
+          <Route path="/Cards" element={<Cards />}></Route>
+          <Route path="/Myapi" element={<Myapi />}></Route>
         </Routes>
-      </Router>
+      </HashRouter>
+      <Mycontext.Provider value = {appleData} >
+        <Myapi/>
+      </Mycontext.Provider>
     </>
   );
 }

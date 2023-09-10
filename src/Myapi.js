@@ -47,14 +47,14 @@ function MyApi() {
       console.error('Error fetching activity', error);
     }
   }
-  dataApple = useContext(Mycontext);
+  const dataApple = useContext(Mycontext);
 
   return (
     <div>
       <h1>Random Activity Suggestion:</h1>
       <p>{activity}</p>
       <button onClick={fetchActivity}>Get Random Activity</button>
-
+      <p>{dataApple}</p>
     </div>
   );
 }
