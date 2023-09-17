@@ -30,7 +30,7 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import Mycontext from './Mycontext';
@@ -42,12 +42,17 @@ function MyApi() {
     try {
       const response = await axios.get('https://www.boredapi.com/api/activity');
       const fetchedActivity = response.data.activity;
+      
       setActivity(fetchedActivity);
     } catch (error) {
       console.error('Error fetching activity', error);
     }
   }
   const dataApple = useContext(Mycontext);
+
+ 
+
+  
 
   return (
     <div>

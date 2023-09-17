@@ -5,7 +5,27 @@ import Carts from "./Carts.js";
 import product from "./Product.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 function Shopping() {
+  const [time, setTime] = useState();
+  const [cityInput, setCityInpun] = useState("");
+
+  async function fetchActivity() {
+    try {
+      await axios
+        .get(
+          "https://api.openweathermap.org/data/2.5/weather?q=London&appid=6ad2d93a017ab254e8acc5a331766df9"
+        )
+        .then((response) => setTime(response.data.wind.speed));
+    } catch (error) {
+      console.error("Error fetching activity", error);
+    }
+  }
+
+  useEffect(()=>{
+    fetchActivity();
+  },[])
+
   const [productList, setproductList] = useState([...product]);
   const [subtotal, setsubtotal] = useState(0);
 
@@ -26,10 +46,8 @@ function Shopping() {
   };
 
   const ttl = () => {
-    
     let tltl = 0;
     cart.map((value) => {
-      
       const appl = value.price * value.quantity;
       tltl = tltl + appl;
     });
@@ -101,6 +119,7 @@ function Shopping() {
 
   return (
     <>
+      <div>{time}</div>
       <div className="fullpage">
         <div className="cartIcon" onClick={() => handleCartDetails()}>
           <FontAwesomeIcon icon={faCartShopping} />
@@ -119,7 +138,7 @@ function Shopping() {
             <button onClick={() => filterHandler("Laptop")}>Laptop</button>
             <button onClick={() => setproductList(product)}>All</button>
           </div>
-         
+
           <div className="allcards">
             {productList.map((value, index) => (
               <Cards

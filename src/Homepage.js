@@ -66,7 +66,7 @@ function Homepage(props) {
           <p>What do you want?</p>
         </div>
       </div>
-      <footer>Frontend : Subash Bhandari</footer>
+      <footer></footer>
     </>
   );
 }
