@@ -53,6 +53,7 @@ function App() {
       
 
       <Router>
+          <HashRouter basename="/">
         <Routes>
           <Route path="/Shopping" element={<Shopping />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
@@ -65,6 +66,7 @@ function App() {
           <Route path="/Cards" element={<Cards />}></Route>
           <Route path="/Myapi" element={<Myapi />}></Route>
         </Routes>
+        </HashRouter>
       </Router>
       <Mycontext.Provider value = {appleData} >
         <Myapi/>
