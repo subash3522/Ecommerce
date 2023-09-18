@@ -10,7 +10,7 @@ import Myapi from "./Myapi.js";
 import Mycontext from "./Mycontext.js"
 import { HashRouter } from "react-router-dom";
 import {
-  BrowserRouter as Router,
+  BrowserRouter ,
   Switch,
   Route,
   Routes,
@@ -52,8 +52,8 @@ function App() {
 
       
 
-      <Router>
-          <HashRouter basename="/">
+      <BrowserRouter>
+         
         <Routes>
           <Route path="/Shopping" element={<Shopping />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
@@ -66,8 +66,8 @@ function App() {
           <Route path="/Cards" element={<Cards />}></Route>
           <Route path="/Myapi" element={<Myapi />}></Route>
         </Routes>
-        </HashRouter>
-      </Router>
+       
+      </BrowserRouter>
       <Mycontext.Provider value = {appleData} >
         <Myapi/>
       </Mycontext.Provider>
