@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
   const [search, setSearch] = useState([]);
@@ -26,8 +27,10 @@ function Navbar(props) {
                     type="search"
                     placeholder="product"
                     onChange={(e) => {
-                      setSearch(e.target.value);
-                      props.searchFilter(search);
+                      // setSearch(e.target.value);
+                      // props.searchFilter(search);
+                      props.searchFilter(e.target.value)
+                     
                     }}
                   />
                   <span className="logoSearch">
@@ -35,8 +38,8 @@ function Navbar(props) {
                   </span>
                 </div>
                 <div className="suggestions">
-                  {props.showResult?.map((value) => (
-                    <li>{value}</li>
+                  {props.showResult.map((value, index) => (
+                    <li key={index} onClick={() =>props.filterById(value.id)}><Link to='/Productdetails'>{value.name}</Link></li>
                   ))}
                 </div>
               </div>

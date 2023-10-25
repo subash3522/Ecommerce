@@ -141,6 +141,7 @@
 }
 .suggestions {
   position: absolute;
+  z-index: 1;
 }
 .search {
   position: relative;
