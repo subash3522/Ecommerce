@@ -51,7 +51,11 @@ function Shopping() {
       const appl = value.price * value.quantity;
       tltl = tltl + appl;
     });
-    setsubtotal(tltl);
+    if(tltl === 0){
+      return 
+    }
+    else{
+    setsubtotal(tltl)}
   };
 
 

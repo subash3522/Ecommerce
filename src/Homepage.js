@@ -24,8 +24,13 @@ function Homepage(props) {
         <div className="center">
           <div className="forlogi">
             <h2 className="heading">
-              Your Ultimate Fashion Destination! <br />
+              Your Dreams, One Click Away! <br />
             </h2>
+            <p>
+              Elevate your shopping journey with us, where every purchase is a
+              step towards a brighter,<br/> more connected future. Welcome to the
+              future of e-commerce, welcome to suvasearch.
+            </p>
           </div>
           <div className="forbutton">
             <button className="reg" onClick={() => loginHandler()}>

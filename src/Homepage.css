@@ -8,7 +8,7 @@
 }
 .maincontainer::before {
   content: "";
-  background-image: url("https://images.pexels.com/photos/1778412/pexels-photo-1778412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://cdn.pixabay.com/photo/2023/10/05/18/59/stones-8296649_1280.jpg");
   background-size: cover;
   background-repeat: repeat-y;
   position: absolute;
@@ -17,7 +17,7 @@
   height: 93vh;
   width: 100%;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 1;
   background-position: center;
 }
 
@@ -29,8 +29,13 @@
 }
 .forlogi {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.forlogi p{
+  color: white;
+  text-align: center;
 }
 .forbutton {
   display: flex;
@@ -41,7 +46,8 @@
 .reg {
   height: 40px;
   width: 100px;
-  background: black;
+  background: transparent;
+  border: solid white 1px;
   border-radius: 5px;
   color: white;
   margin: 20px 10px;
@@ -68,17 +74,16 @@
 }
 
 .heading {
-  color: rgb(66, 154, 237);
-  background-color:#eafbf1;
-  font-family: 'Lato', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  color: white;
+  
+  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-radius: 15px;
   padding: 8px;
-  font-size: 1rem;
-  box-shadow: 2px 2px 2px black;
+  font-size: 2rem;
+  
 }
 .secondpart {
-    
   display: flex;
   justify-content: space-evenly;
   height: 50vh;
@@ -88,26 +93,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- width: 40%;
- height: 100%;
-   
+  width: 40%;
+  height: 100%;
 }
-.imagecontent{
-    width: 40%;
-    height: 100%
+.imagecontent {
+  width: 40%;
+  height: 100%;
 }
 .imagecontent img {
-width: 100%;
-height: 90%;
-object-fit: contain ;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
 }
 .writtencontent img {
-    width: 100%;
-height: 90%;
-object-fit: contain ;
-
-
-
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
 }
 footer {
   border: solid rgb(242, 210, 171) 1px;
@@ -128,16 +129,16 @@ footer {
   justify-content: space-between;
 }
 
-@media(max-width:770px){
-    .secondpart{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .writtencontent{
-        width: 85%;
-    }
-    .imagecontent{
-        width: 85%;
-    }
+@media (max-width: 770px) {
+  .secondpart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .writtencontent {
+    width: 85%;
+  }
+  .imagecontent {
+    width: 85%;
+  }
 }

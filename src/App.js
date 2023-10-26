@@ -12,16 +12,17 @@ import { HashRouter } from "react-router-dom";
 import { BrowserRouter, Switch, Route, Routes, Link } from "react-router-dom";
 
 import Cards from "./Cards.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loginpage from "./Loginpage";
 import Productdetails from "./Productdetails";
 
 function App() {
   const [showResult, setShowResutl] = useState([]);
+  const [showResultCheck,setShowResutlCheck] = useState(false)
   const [idFilteredData, setIdFilteredData] = useState([])
   const searchFilter = (a) => {
-    if (typeof a !== "string" || a == "") {
-      return [];
+    if (typeof a !== "string" || a === "") {
+      return handleClear();
     }
 
     const filterResult = product.filter((value) => {
@@ -30,6 +31,21 @@ function App() {
     setShowResutl(filterResult);
   };
   const [sideBar, setSidebar] = useState(false);
+
+  const handleClear =()=>{
+    setShowResutl([])
+  }
+
+  const abc = ()=>{
+    if(showResult ==! []){
+setShowResutlCheck(true)
+    }
+    if(showResult==[]){
+      setShowResutlCheck(false)
+    }
+   
+   
+  }
 
   const sideBarHandler = () => {
     setSidebar(!sideBar);
@@ -43,7 +59,7 @@ function App() {
    setShowResutl([])
   }
   const appleData = "i am apple";
-  console.log(idFilteredData);
+  console.log(showResult);
 
   return (
     <>
@@ -58,6 +74,8 @@ function App() {
         sideBar={sideBar}
         sideBarHandler={sideBarHandler}
         filterById={filterById}
+        showResultCheck = {showResultCheck}
+        abc = {abc}
       />
         <Routes>
           <Route path="/Shopping" element={<Shopping />}></Route>

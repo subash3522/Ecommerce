@@ -17,7 +17,7 @@ function Navbar(props) {
   return (
     <>
       <nav className="navbar">
-        <div className="logo">LOGO</div>
+        <div className="logo">suvasearch.com</div>
         <div className={props.sideBar ? "sidebar list" : "list"}>
           <ul>
             <li>
@@ -30,6 +30,7 @@ function Navbar(props) {
                       // setSearch(e.target.value);
                       // props.searchFilter(search);
                       props.searchFilter(e.target.value)
+                      props.abc()
                      
                     }}
                   />
@@ -37,9 +38,9 @@ function Navbar(props) {
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </span>
                 </div>
-                <div className="suggestions">
+                <div className ={props.showResultCheck?'suggestions':'noshow'}>
                   {props.showResult.map((value, index) => (
-                    <li key={index} onClick={() =>props.filterById(value.id)}><Link to='/Productdetails'>{value.name}</Link></li>
+                    <li className="listshow" key={index} onClick={() =>props.filterById(value.id)}><Link to='/Productdetails'>{value.name}</Link></li>
                   ))}
                 </div>
               </div>
