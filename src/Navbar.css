@@ -154,11 +154,11 @@
   width: 100%;
   position: absolute;
   z-index: 1;
-  background-color: white;
-  border: solid black 1px;
+  /* background-color: white;
+  border: solid black 1px; */
   padding: 10px;
-  box-shadow: 1px 1px 6px  black;
-  border-radius: 4px;
+  /* box-shadow: 1px 1px 6px  black;
+  border-radius: 4px; */
   
 }
 
@@ -252,10 +252,19 @@
  width: 100%;
   }
 
+  .suggestions{
+    background-color: white;
+    border: solid black 1px;
+  }
+  
+.listshow{
+  color: black;
+}
   /* .bgblur{
     filter: blur(1.2px);
     z-index: -1;
   } */
  
 }
+
 
