@@ -67,7 +67,7 @@ setShowResutlCheck(true)
       {/* <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler}/>
       <Shopping /> */}
 
-      <BrowserRouter basename="/Ecommerce">
+      <BrowserRouter>
       <Navbar
         searchFilter={searchFilter}
         showResult={showResult}
@@ -81,7 +81,7 @@ setShowResutlCheck(true)
           <Route path="/Shopping" element={<Shopping />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route
-            path="/Ecommerce"
+            path="/"
             element={
               <Homepage sideBar={sideBar} sideBarHandler={sideBarHandler} />
             }
